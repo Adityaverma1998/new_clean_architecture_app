@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:news_app/features/app/routes.dart';
+import 'package:news_app/features/app/theme.dart';
 
-class App extends StatelessWidget{
-  const App({super.key});
-
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-   
-   return MaterialApp(home: Center(child: Text("Hello i  am here ")));
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      theme: AppThemes.themeData,
+      routerConfig: AppRouter().generateRoute(),
+    );
   }
 }
